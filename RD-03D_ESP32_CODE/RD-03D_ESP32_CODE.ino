@@ -1,3 +1,4 @@
+
 #include <WiFi.h>
 #include <WebServer.h>
 #include <ArduinoJson.h>
@@ -5,12 +6,15 @@
 // #include "web_interface.h"
 
 // WiFi credentials - Update these with your network details
-const char* ssid = "YOUR_WIFI_SSID";
-const char* password = "YOUR_WIFI_PASSWORD";
+// const char* ssid = "YOUR_WIFI_SSID";
+// const char* password = "YOUR_WIFI_PASSWORD";
+
+const char* ssid = "1234";
+const char* password = "12345";
 
 // Hardware pins
 const int buzzerPin = 7;
-const int ledPin = 15;    // Built-in LED
+const int ledPin = 8;    // Built-in LED
 const int ledRPin = 21;   // Red LED
 const int ledGPin = 22;   // Green LED
 const int ledBPin = 23;   // Blue LED
@@ -39,8 +43,11 @@ bool blinkState = false;
 
 void setup() {
   Serial.begin(115200);
-  Serial1.begin(256000, SERIAL_8N1, 17, 16); // D7 = RX, D6 = TX
-  
+  delay(1000);
+  Serial1.begin(256000, SERIAL_8N1, 2, 1); // RX=GPIO2, TX=GPIO1
+  delay(1000);
+  Serial.println("Radar Sensor Started");
+
   // Initialize pins
   pinMode(buzzerPin, OUTPUT);
   pinMode(ledPin, OUTPUT);
@@ -633,3 +640,4 @@ String getMainHTML() {
 </html>
 )rawstring";
 }
+
