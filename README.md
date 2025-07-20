@@ -1,4 +1,8 @@
-# Radar-Based-Home-Security-System
+
+- rd-03d 레이더를 가지고 esp32와 연결하는 예제
+
+
+### Radar-Based-Home-Security-System
 
 Traditional home security systems have a fatal flaw. PIR (Passive Infrared) sensors, the backbone of most security setups, are notorious for false alarms triggered by pets, moving curtains, temperature changes, or even sunlight shifting through windows. They also struggle with range limitations and can be easily fooled by slow-moving intruders or those wearing heavy clothing that masks body heat.
 
